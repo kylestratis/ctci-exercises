@@ -19,7 +19,6 @@ def permutation(string1, string2):
     if len(string1) != len(string2):
         return False
     list1 = list(string1.lower())
-    print list1
     ref_list = list(string1.lower())
     list2 = list(string2.lower())
     for char in ref_list:
