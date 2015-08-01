@@ -2,6 +2,7 @@
 # Exercise 03
 # Given 2 strings, write a method to determine
 # if one is a permutation of the other.
+# Some considerations to make: does case matter? Does whitespace matter?
 
 def main():
     test_string_a = "This"
@@ -12,6 +13,8 @@ def main():
     print permutation(test_string_c, test_string_d)
 
 def permutation(string1, string2):
+    if len(string1) != len(string2):
+        return False
     list1 = list(string1.lower())
     ref_list = list(string1.lower())
     list2 = list(string2.lower())
