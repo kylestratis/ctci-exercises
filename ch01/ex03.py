@@ -9,13 +9,17 @@ def main():
     test_string_b = "Hits"
     test_string_c = "That"
     test_string_d = "What"
+    test_string_e = "This is her"
+    test_string_f = "Sit her his"
     print permutation(test_string_a, test_string_b)
     print permutation(test_string_c, test_string_d)
+    print permutation(test_string_e, test_string_f)
 
 def permutation(string1, string2):
     if len(string1) != len(string2):
         return False
     list1 = list(string1.lower())
+    print list1
     ref_list = list(string1.lower())
     list2 = list(string2.lower())
     for char in ref_list:
