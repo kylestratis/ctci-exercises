@@ -9,9 +9,9 @@ def main():
     print unique_characters(test_data[0])
     print unique_characters(test_data[1])
 
-def unique_characters(str):
+def unique_characters(input):
     unique_chars = set()
-    for char in str:
+    for char in input:
         if char not in unique_chars:
             unique_chars.add(char)
         else:
