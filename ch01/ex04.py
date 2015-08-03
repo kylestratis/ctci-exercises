@@ -7,8 +7,8 @@ def main():
     test_string = "This is a test string"
     print spaces(test_string)
 
-def spaces_easy(str):
-    return str.replace(' ','%20')
+def spaces_easy(input):
+    return input.replace(' ','%20')
 
 if __name__ == "__main__":
     main()
