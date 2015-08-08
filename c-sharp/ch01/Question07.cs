@@ -10,14 +10,15 @@ namespace ch01 {
     /// and column are set to 0.
     /// </summary>
     class Question07 {
-        public static void Main(string[] args) {
+        public static void Execute(string[] args) {
             var TestMatrixOne = new int[,] { {2, 0, 5}, 
                                              {3, 5, 7} };
 
             var TestMatrixTwo = new int[,] { {3, 1}, 
                                              {1, 4}, 
                                              {0, 0} };
-           
+
+            Console.WriteLine("Chapter 01 Question 07");
             Console.WriteLine("Old matrix:");
             PrintMatrix(TestMatrixOne);
             Console.WriteLine("New matrix:");
