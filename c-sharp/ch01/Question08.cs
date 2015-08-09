@@ -21,7 +21,6 @@ namespace ch01 {
             Console.WriteLine("Chapter 01 Question 08:");
             Console.WriteLine("Is {0} a rotation of {1}? {2}", TestStringTwo, TestStringOne, IsRotation(TestStringOne, TestStringTwo));
             Console.WriteLine("Is {0} a rotation of {1}? {2}", TestStringFour, TestStringThree, IsRotation(TestStringThree, TestStringFour));
-            //Console.WriteLine("Press Enter to continue:");
             Console.Read();
         }
 
