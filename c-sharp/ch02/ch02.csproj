@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Question01.cs" />
     <Compile Include="Question02.cs" />
+    <Compile Include="Question03.cs" />
     <Compile Include="RunTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

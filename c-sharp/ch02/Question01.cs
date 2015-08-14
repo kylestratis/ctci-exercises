@@ -16,7 +16,7 @@ namespace ch02 {
                 Console.WriteLine("{0}", item);
             }
             var prunedList = RemoveDuplicates(inputList);
-            Console.WriteLine("Pruned list:");
+            Console.WriteLine("Duplicates removed:");
             foreach (var item in prunedList) {
                 Console.WriteLine("{0}", item);
             }

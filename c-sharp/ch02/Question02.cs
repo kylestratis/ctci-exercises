@@ -32,7 +32,9 @@ namespace ch02 {
                 node = node.Next;
             }
 
-            while (nodeStack.Count > index) {
+            int maxStackSize = nodeStack.Count;
+
+            while (nodeStack.Count > (maxStackSize - index + 1)) { 
                 nodeStack.Pop();
             }
             
