@@ -16,6 +16,7 @@ namespace ch02 {
             Question02.Execute(GenerateLinkedList(7));
             Question03.Execute(GenerateLinkedList(6)); // Return unchanged list
             Question03.Execute(GenerateLinkedList(5));
+            Question04.Execute(GenerateLinkedList(8));
             Console.WriteLine("Press Enter to continue:");
             Console.Read();
         }
