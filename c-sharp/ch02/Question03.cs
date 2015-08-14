@@ -23,6 +23,7 @@ namespace ch02 {
             }
         }
 
+        // This uses the entire list and thus ignores the constraint of having only access to the node. See method below this.
         public static LinkedList<int> RemoveMiddle(LinkedList<int> list) {
             if (list.Count % 2 == 0) {
                 return list;
@@ -34,6 +35,16 @@ namespace ch02 {
             }
             list.Remove(node);
             return list;
+        }
+
+        // A basic implementation of the Java solution in the book
+        public static bool RemoveNode(LinkedListNode<int> node) {
+            if (node.Next == null || node.Value == null) {
+                return false;
+            }
+            var copiedNode = node.Next;
+            node = copiedNode;
+            return true;
         }
     }
 }
