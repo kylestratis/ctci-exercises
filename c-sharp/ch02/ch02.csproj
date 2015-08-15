@@ -49,6 +49,7 @@
     <Compile Include="Question04.cs" />
     <Compile Include="Question05.cs" />
     <Compile Include="Question06.cs" />
+    <Compile Include="Question07.cs" />
     <Compile Include="RunTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

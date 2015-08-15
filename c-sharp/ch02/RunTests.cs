@@ -19,6 +19,8 @@ namespace ch02 {
             Question04.Execute(GenerateLinkedList(8, 200));
             Question05.Execute(GenerateLinkedList(3, 9), GenerateLinkedList(3, 9));
             Question06.Execute(GenerateCircularLinkedList(5, 9));
+            Question07.Execute(GenerateLinkedList(7, 9));
+            Question07.Execute(GeneratePalindrome());
             Console.WriteLine("Press Enter to continue:");
             Console.Read();
         }
@@ -29,6 +31,16 @@ namespace ch02 {
             for (int i = 0; i < size; i++) {
                 newList.AddLast(rand.Next(0, max));
             }
+            return newList;
+        }
+
+        public static LinkedList<int> GeneratePalindrome() {
+            var newList = new LinkedList<int>();
+            newList.AddLast(0);
+            newList.AddLast(1);
+            newList.AddLast(2);
+            newList.AddLast(1);
+            newList.AddLast(0);
             return newList;
         }
 
