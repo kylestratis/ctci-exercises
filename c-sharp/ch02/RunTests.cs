@@ -18,6 +18,7 @@ namespace ch02 {
             Question03.Execute(GenerateLinkedList(5, 200));
             Question04.Execute(GenerateLinkedList(8, 200));
             Question05.Execute(GenerateLinkedList(3, 9), GenerateLinkedList(3, 9));
+            Question06.Execute(GenerateCircularLinkedList(5, 9));
             Console.WriteLine("Press Enter to continue:");
             Console.Read();
         }
@@ -27,7 +28,17 @@ namespace ch02 {
             var newList = new LinkedList<int>();
             for (int i = 0; i < size; i++) {
                 newList.AddLast(rand.Next(0, max));
-                }
+            }
+            return newList;
+        }
+
+        // The last node is always the circular reference, but it'll suffice for the problem at hand.
+        public static CircularLinkedList<int> GenerateCircularLinkedList(int size, int max) {
+            Random rand = new Random();
+            var newList = new CircularLinkedList<int>();
+            for (int i = 0; i < size; i++) {
+                newList.AddLast(rand.Next(0, max));
+            }
             return newList;
         }
     }
