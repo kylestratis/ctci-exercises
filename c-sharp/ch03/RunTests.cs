@@ -27,6 +27,8 @@ namespace ch03 {
             }
             Console.Write("]");
             Console.WriteLine(" ");
+            Console.WriteLine("PopAt, should get 3: {0}", testSet.PopAt(0));
+            Console.WriteLine(" ");
         }
 
         public static SetOfStacks CreateSetOfStacks() {

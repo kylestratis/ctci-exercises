@@ -33,6 +33,15 @@ namespace ch03 {
             return popped;
         }
 
+        public int PopAt(int index) {
+            var stack = Data[index];
+            var popped = stack.Pop();
+            if (stack.Count == 0) {
+                Data.Remove(stack);
+            }
+            return popped;
+        }
+
         public void Push(int pushed) {
             var stack = LastStack;
             if (stack.Count >= Capacity && (stack != null)) {
