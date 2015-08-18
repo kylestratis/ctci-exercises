@@ -8,6 +8,7 @@ namespace ch03 {
     class RunTests {
         static void Main(string[] args) {
             SetOfStacksTests();
+            TowerOfHanoi.Execute(args);
             Console.WriteLine("Press Enter to continue:");
             Console.Read();
         }
