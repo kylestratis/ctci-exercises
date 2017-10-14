@@ -9,12 +9,12 @@ public class ch01_exercises {
 
         for (char a : firstArr) {
             if (uniqueHash.containsKey(a)) {
-                return true;
+                return false;
             }
             uniqueHash.put(a, 1);
         }
 
-        return false;
+        return true;
     }
 
     /** Book solution to uniqueChar
@@ -37,7 +37,10 @@ public class ch01_exercises {
     }
 
     public static void main(String[] args) {
+        System.out.println("Question 1.1");
         System.out.println(uniqueChar("testone"));
+        System.out.println("Should have been false");
         System.out.println(uniqueChar("tes"));
+        System.out.println("Should have been true");
     }
 }
