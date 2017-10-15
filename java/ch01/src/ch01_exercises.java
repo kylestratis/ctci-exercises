@@ -121,8 +121,6 @@ public class ch01_exercises {
         }
 
         return sb.toString();
-
-        // Check length of original string vs compressed
     }
 
     public static void main(String[] args) {
