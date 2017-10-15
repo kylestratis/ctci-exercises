@@ -89,6 +89,42 @@ public class ch01_exercises {
         return sb.toString();
     }
 
+    // Write a method to compress string with repeated characters. Ie aabcccccaaa becomes a2b1c5a3.
+    public static String questionFive(String str) {
+        // Perform compression
+        char[] charArray = str.toCharArray();
+        char holder = '\0';
+        int repCount = 0;
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < charArray.length; i++) {
+            if (charArray[i] == holder) {
+                repCount++;
+            }
+            else if (i != 0) {
+                    sb.append(holder);
+                    sb.append(repCount);
+                    holder = charArray[i];
+                    repCount = 1;
+            }
+            else {
+                holder = charArray[i];
+                repCount = 1;
+            }
+        }
+
+        sb.append(holder);
+        sb.append(repCount);
+
+        if (sb.length() >= str.length()) {
+            return str;
+        }
+
+        return sb.toString();
+
+        // Check length of original string vs compressed
+    }
+
     public static void main(String[] args) {
         System.out.println("Question 1.1");
         System.out.println(uniqueChar("testone"));
@@ -105,5 +141,10 @@ public class ch01_exercises {
         System.out.println("Question 1.4");
         System.out.println(questionFour("This is John Woods")); // modified to be more idiomatic Java
         System.out.println(questionFour("This  is John"));
+        System.out.println("=====================");
+        System.out.println("Question 1.5");
+        System.out.println(questionFive("aabbbcccec"));
+        System.out.println(questionFive("aabbbcccecccc"));
+        System.out.println(questionFive("abc"));
     }
 }
