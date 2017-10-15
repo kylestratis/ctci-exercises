@@ -2,13 +2,14 @@
 
 use strict;
 use warnings;
+use boolean;
 
 # Implement an algorithm to determine if string has all unique chars
 # Inputs: str
 sub question01 {
     my %args = @_;
 
-    foreach my $arg (qq{str}) {
+    foreach my $arg (qw{str}) {
         if (!exists $args{$arg}) {
             return "Error!";
         }
@@ -30,6 +31,32 @@ sub question01 {
     return 1;
 }
 
+# Inputs: str1, str2
+sub question03 {
+    my %args = @_;
+    
+    foreach my $arg (qw{str1 str2}) {
+        if (!exists $args{$arg}) {
+            return "Error!";
+        }
+    }
+
+    my @str1_array = split //, $args{str1};
+    my @str2_array = split //, $args{str2};
+
+    return boolean::false if (scalar @str1_array != scalar @str2_array);
+
+    my $size = scalar @str1_array;
+    
+    @str1_array = sort(@str1_array);
+    @str2_array = sort(@str2_array);
+    for (my $i = 0; $i < scalar @str1_array; $i++) { 
+        return boolean::false if ($str1_array[$i] ne $str2_array[$i]);
+    }
+    return boolean::true;
+}
+
+# Driver
 my $result;
 $result = question01(str => "test");
 if ($result && $result ne "Error!") {
@@ -46,3 +73,11 @@ if ($result && $result ne "Error!") {
 else {
     print "Q1b not unique (incorrect)\n";
 }
+
+$result = question03(str1 => "fast", str2 => "tsaf");
+print "Question 3:\n";
+print "$result. Should be true\n";
+$result = question03(str1 => "test", str2 => "reddit");
+print "$result. Should be false\n";
+$result = question03(str1 => "tests", str2 => "setss");
+print "$result. Should be false\n";
