@@ -56,6 +56,20 @@ sub question03 {
     return boolean::true;
 }
 
+# Inputs: str
+sub question04 {
+    my %args = @_;
+    
+    foreach my $arg (qw{str}) {
+        if (!exists $args{$arg}) {
+            return "Error!";
+        }
+    }
+
+    $args{str} =~ s/\s/%20/g; # This is why Perl is superior for text manipulation
+    return $args{str};
+}
+
 # Driver
 my $result;
 $result = question01(str => "test");
@@ -81,3 +95,9 @@ $result = question03(str1 => "test", str2 => "reddit");
 print "$result. Should be false\n";
 $result = question03(str1 => "tests", str2 => "setss");
 print "$result. Should be false\n";
+
+$result = question04(str => "This is John Woods");
+print "Question 4:\n";
+print "$result\n";
+$result = question04(str => "This   is John Woods");
+print "$result\n";
