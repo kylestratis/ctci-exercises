@@ -73,6 +73,22 @@ public class ch01_exercises {
         return true;
     }
 
+    // Write a method to replace all spaces in a string with '%20'
+    public static String questionFour(String str) {
+        char[] strArray = str.toCharArray();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < strArray.length; i++) {
+            if (strArray[i] == ' ') {
+                sb.append("%20");
+            }
+            else {
+                sb.append(strArray[i]);
+            }
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
         System.out.println("Question 1.1");
         System.out.println(uniqueChar("testone"));
@@ -85,5 +101,9 @@ public class ch01_exercises {
         System.out.println("Should be false");
         System.out.println(questionThree("false", "lasef"));
         System.out.println("Should be true");
+        System.out.println("=====================");
+        System.out.println("Question 1.4");
+        System.out.println(questionFour("This is John Woods")); // modified to be more idiomatic Java
+        System.out.println(questionFour("This  is John"));
     }
 }
