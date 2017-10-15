@@ -4,28 +4,38 @@ public class ch02_exercises {
 
     // Write code to remove elements from a singly linked list
     public static void QuestionOne(Node n) {
-        // Store each node in a hashmap as a buffer
-        HashMap table = new HashMap();
-        Node previous = null;
 
-        while (n != null) {
-            if (table.containsKey(n)) {
-                // Previous will be the new list, if we find a dupe, add its next to previous's
-                // but not advance the node that previous is set to
-                previous.next = n.next;
-            }
-            else {
-                // If we don't find a dupe, add it to hash, set to true, advance previous to n
-                table.put(n.data, true);
-                previous = n;
-            }
-            // Advance node
-            n = n.next;
-        }
+
+
     }
 
+    // Write code to find kth from the last node in a linked list
+    //public static Node QuestionTwo(Node n, int k) {
+
+    //}
+
     public static void main(String[] args) {
+        LinkedList testList = new LinkedList();
+        testList.addToTail(1);
+        testList.addToTail(1);
+        testList.addToTail(2);
+        testList.printList();
         System.out.println("Question 2.1");
+        LinkedList newList = testList.removeDupes();
+        newList.printList();
+        testList = new LinkedList();
+        testList.addToTail(1);
+        testList.addToTail(13);
+        testList.addToTail(2);
+        newList = testList.removeDupes();
+        newList.printList();
+        testList = new LinkedList();
+        testList.addToTail(1);
+        testList.addToTail(2);
+        testList.addToTail(2);
+        testList.addToTail(1);
+        newList = testList.removeDupes();
+        newList.printList();
         System.out.println("------------");
         System.out.println("Question 2.2");
     }
