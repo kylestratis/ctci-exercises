@@ -70,6 +70,43 @@ sub question04 {
     return $args{str};
 }
 
+# Inputs: str
+sub question05 {
+    my %args = @_;
+
+    foreach my $arg (qw{str}) {
+        if (!exists $args{$arg}) {
+            return "Error!";
+        }
+    }
+
+    my @str_arr = split //, $args{str};
+    my $holder;
+    my $rep_count = 0;
+    my $res_str;
+
+    foreach my $char (@str_arr) {
+        if (defined ($holder) && $char eq $holder) {
+            $rep_count++;
+        }
+        else {
+            $res_str .= $holder if (defined $holder);
+            $res_str .= $rep_count if (defined $holder);
+            $holder = $char;
+            $rep_count = 1;
+        }
+    }
+
+    $res_str .= $holder;
+    $res_str .= $rep_count;
+
+    if (length $res_str == scalar @str_arr) {
+        return $args{str};
+    }
+
+    return $res_str;
+}
+
 # Driver
 my $result;
 $result = question01(str => "test");
@@ -100,4 +137,12 @@ $result = question04(str => "This is John Woods");
 print "Question 4:\n";
 print "$result\n";
 $result = question04(str => "This   is John Woods");
+print "$result\n";
+
+$result = question05(str => "aabbbcccec");
+print "Question 5:\n";
+print "$result\n";
+$result = question05(str => "aabbbcccecccc");
+print "$result\n";
+$result = question05(str => "abc");
 print "$result\n";
